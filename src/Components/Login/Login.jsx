@@ -1,6 +1,15 @@
-import { Button, TextField } from "@material-ui/core";
+import { Button, TextField, InputAdornment } from "@material-ui/core";
+import { Visibility, VisibilityOff } from '@material-ui/icons';
 import { Component } from "react";
+import { Snackbar } from "@material-ui/core";
+import MuiAlert from "@material-ui/lab/Alert"
 import './Login.scss'
+import UserServices from "../../Services/UserServices.js";
+const service = new UserServices();
+
+function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props}></MuiAlert>
+}
 
 class Login extends Component {
     constructor(props) {
@@ -30,57 +39,88 @@ class Login extends Component {
         this.setState({ [name]: value });
     }
 
-    validationCheck = () => {
+    changePasswordVisibility = () => {
+        this.setState({ visibility: !this.state.visibility })
+    }
+
+    validateInput = () => {
+        let validate = true;
         this.setState({
             emailError: false,
             emailErrormsg: '',
             passwordError: false,
             passwordErrormsg: '',
         })
-        var valid = true;
 
         let patter = "^[0-9a-zA-Z]+([.\\-_+][0-9a-zA-Z]+)*@[a-z0-9A-Z]+.[a-z]{2,4}([.][a-zA-Z]{2,})*$";
         let pattern = new RegExp(patter);
         if (!pattern.test(this.state.email)) {
             this.setState({ emailError: true })
             this.setState({ emailErrormsg: "Invalid Email address" })
-            valid = false;
+            validate = false;
         }
         if (this.state.email.length == 0) {
             this.setState({ emailError: true })
             this.setState({ emailErrormsg: "Choose Email address" })
-            valid = false;
+            validate = false;
         }
 
 
         if (this.state.password.length == 0) {
             this.setState({ passwordError: true })
             this.setState({ passwordErrormsg: "Enter a password" })
-            valid = false;
+            validate = false;
         }
-        return valid;
+        return validate;
     }
 
     login = () => {
-        if(this.validationCheck){
+        if (this.validateInput()) {
             let data = {
                 "email": this.state.email,
                 "password": this.state.password
             }
-            console.log(data);
+            // console.log(data);
+            service.login(data).then((res) => {
+                console.log(res);
+                this.setState({ snackType: "success", snackMessage: "Login successful", open: true, setOpen: true });
+            })
+                .catch((err) => {
+                    console.log(err);
+                    this.setState({ snackType: "error", snackMessage: "Login Failed", open: true, setOpen: true })
+                })
         }
+        else{
+            this.setState({ snackType: "error", snackMessage: "Enter Valid Details", open: true, setOpen: true })
+        }
+        // this.setState({email: "",password: ""})
+    }
+
+    handleSnackClose = () => {
+        this.setState({
+            open: false,
+            setOpen: false
+        })
     }
 
     render() {
         return (
             <>
                 <TextField id="outlined-basic" label="Email Id" variant="outlined" margin="dense" name="email"
-                onChange={this.change}
+                    onChange={this.change} error={this.state.emailError} helperText={this.state.emailErrormsg}
                 >
 
                 </TextField>
                 <div>
-                    <TextField id="outlined-basic" label="Password" variant="outlined" name="password" fullWidth margin="dense"></TextField>
+                    <TextField id="outlined-basic" label="Password" variant="outlined" name="password" fullWidth margin="dense"
+                        error={this.state.passwordError} helperText={this.state.passwordErrormsg} onChange={this.change}
+                        type={this.state.visibility ? 'text' : 'password'}
+                        InputProps={{
+                            endAdornment: <InputAdornment position="end">
+                                {this.state.visibility ? <Visibility className="end" onClick={this.changePasswordVisibility} /> : <VisibilityOff className="end" onClick={this.changePasswordVisibility} />}
+                            </InputAdornment>,
+                        }}
+                    ></TextField>
                 </div>
                 <Button variant="contained" color="secondary" onClick={this.login}>Login</Button>
                 <div className="inlineButtons1">
@@ -91,6 +131,13 @@ class Login extends Component {
                         Google
                     </Button>
                 </div>
+                <div >
+                    <Snackbar style={{width:"20%"}} open={this.state.open} autoHideDuration={3000} onClose={this.handleSnackClose}>
+                        <Alert severity={this.state.snackType}>{this.state.snackMessage}</Alert>
+                    </Snackbar>
+                </div>
+
+
             </>
         )
     }
