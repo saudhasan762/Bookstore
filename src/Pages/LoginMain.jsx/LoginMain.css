@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.fullbody{
+    width: auto;
+    height: 100vh;
+    background-color:  #9d9d9d;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagebody {
+    position: absolute;
+    width: 624px;
+    height: 391px;
+    background: #f5f5f5 0% 0% no-repeat padding-box;
+    border-radius: 12px;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.imagebody .online {
+    margin-left: 50px;
+    padding-top: 20px;
+}
+.imagebody img {
+    margin-left: 40px;
+}
+.end {
+    cursor: pointer;
+    margin-left: 90px;
+}
+.form {
+    position: absolute;
+    width: 369px;
+    height: 425px;
+    background: #fff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 15px #000 29;
+    border: 1px solid #e4e4e4;
+    border-radius: 6px;
+    opacity: 1;
+    margin-left: 330px;
+    margin-top: -10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.inlinelinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    font-family: Roboto;
+    font-size: large;
+    font-weight: 400;
+    padding: 13px 15px 0;
+    padding-bottom: 0%;
+}
+.form Button {
+    background-color: #a03037;
+    color: white;
+}
+
+
+.links {
+    color: #636363;   
+}
+
+.links2 {
+    color: #000000;
+    /* text-decoration-style: solid; */
+    text-decoration-thickness: 4px;
+    text-decoration-line: underline;
+    text-decoration-color: #a03037;
+    
+}
+
+@media only screen and (max-width: 360px) {
+
+
+    .imagebody{
+        display: none;
+    }
+
+    .form{
+        margin-left: 0%;
+    }
+    
+}
+@media only screen and (max-width: 460px) {
+
+    .imagebody{
+        display: none;
+    }
+
+    .form{
+        margin-left: 0%;
+    }
+    
+}
+
+@media only screen and (max-width:360px){
+    .fullbody{
+        width: 1366px;
+        /* height: 301vh; */
+        background-color:  #9d9d9d;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    .fullbody {
+        width: 620px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #9d9d9d
+    }    
+}
