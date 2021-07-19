@@ -5,6 +5,7 @@ import { Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert"
 import './Login.scss'
 import UserServices from "../../Services/UserServices.js";
+import { withRouter } from "react-router-dom";
 const service = new UserServices();
 
 function Alert(props) {
@@ -84,6 +85,7 @@ class Login extends Component {
             service.login(data).then((res) => {
                 console.log(res);
                 this.setState({ snackType: "success", snackMessage: "Login successful", open: true, setOpen: true });
+                this.props.history.push("/Dashboard");
             })
                 .catch((err) => {
                     console.log(err);
@@ -143,4 +145,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default withRouter (Login);

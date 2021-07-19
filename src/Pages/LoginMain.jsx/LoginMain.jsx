@@ -17,11 +17,11 @@ export default class LoginMain extends Component {
     }
 
     switchToSignup = () => {
-        this.props.history.push('/Main/Signup');
+        this.props.history.push('/Bookstore/Signup');
     }
 
     switchToLogin = () => {
-        this.props.history.push('/Main');
+        this.props.history.push('/Bookstore/Login');
     }
 
     render() {
@@ -35,11 +35,11 @@ export default class LoginMain extends Component {
                         <div onClick={this.switchToLogin} style={{cursor:"pointer"}}><strong>LOGIN</strong></div>
                         <div onClick={this.switchToSignup} style={{cursor:"pointer"}}><strong>SIGNUP</strong></div>
                     </div>
-                        <Route exact path="/Main">
+                        <Route exact path="/Bookstore/Login">
                             <Login />
                         </Route>
                         
-                        <Route exact path="/Main/Signup">
+                        <Route exact path="/Bookstore/Signup">
                             <Signup />
                         </Route>
                     {/* <Signup /> */}

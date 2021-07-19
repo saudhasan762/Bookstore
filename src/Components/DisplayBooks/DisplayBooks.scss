@@ -1,0 +1,141 @@
+.usercontent {
+    width: max-width;
+    /* height: 89.4vh; */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: Roboto;
+    margin: 0 15.5%;
+}
+
+.usercontent .inlineheader {
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.headers {
+    font-size: 25px;
+    margin-left: -52px;
+}
+.headers span{
+    font-size: 15px;
+    color: #878787;
+}
+
+.dropbox-content{ 
+    
+    margin-right: -24px;
+    width: 157px;
+    height: 30px;
+    margin-top:-11px
+}
+
+.books {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px;
+    width: 110%;
+    margin-left: -6% ;
+    
+}
+.showbooks {
+    width: 235px;
+    height: 272px;
+    box-sizing: border-box;
+    border: 1px solid #cfcdcd;
+    background: white;
+    margin-top: 35px;
+    border-radius: 3px;
+    opacity: 1;
+    cursor: pointer;
+}
+.showbooks:hover {
+    box-shadow: 0px 3px 5px 3px rgba(101, 107, 112, 0.2);;
+    cursor: pointer;
+}
+.bookimage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 233px;
+    height: 172px;
+    box-sizing: border-box;
+    background-color: #e2e2e2;
+    /* padding: 15px; */
+}
+.bookimage img {
+    width: 109px;
+    height: 135px;
+}
+.bookname{
+    top: 327px;
+    left: 452px;
+    width: 130px;
+    height: 19px;
+    text-align: left;
+    font: normal normal normal 14px/19px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+.content {
+    padding: 10px;
+}
+.author {
+    /* font-size: 10px;
+    color: #878787;
+    padding-bottom: 5px;
+     */
+     padding-top: 1px;
+    top: 349px;
+    left: 191px;
+    /* width: 63px; */
+    height: 13px;
+    text-align: left;
+    font: normal normal normal 12px/16px  Roboto;
+    letter-spacing: 0px;
+    color: #878787;
+    opacity: 1;
+}
+.price {
+    padding-bottom: 1px;
+    font: normal normal bold 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+    height: 16px;
+    margin-top:6px;
+}
+.rating {
+    display: flex;
+    /* top: 377px; */
+    left: 191px;
+    width: 33px;
+    height: 16px;
+    background: #388e3c 0% 0% no-repeat padding-box;
+    border-radius: 1px;
+    opacity: 1;
+    /* text-align: left; */
+    font: normal normal bold 10px/13px Roboto;
+    letter-spacing: 0px;
+    color: #fff;
+    opacity: 1;
+    margin-top: 6px;
+   
+}
+.rate {
+    margin-left: 15%;
+    margin-top: 5%;
+    letter-spacing: 0px;
+    /* text-align: center; */
+    /* padding-bottom: 5px; */
+}
