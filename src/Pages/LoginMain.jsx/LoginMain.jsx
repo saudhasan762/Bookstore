@@ -12,17 +12,20 @@ export default class LoginMain extends Component {
             fullName: "",
             email: "",
             password: "",
+            login: false
 
         })
     }
 
     switchToSignup = () => {
         this.props.history.push('/Bookstore/Signup');
+        this.setState({login: true})
     }
 
     switchToLogin = () => {
         this.props.history.push('/Bookstore/Login');
-    }
+        this.setState({login: false})
+    };
 
     render() {
         return (
@@ -32,8 +35,8 @@ export default class LoginMain extends Component {
                     <div className="online"> <strong>ONLINE BOOK SHOPPING</strong></div></div>
                 <div className="form">
                     <div className="inlinelinks">
-                        <div onClick={this.switchToLogin} style={{cursor:"pointer"}}><strong>LOGIN</strong></div>
-                        <div onClick={this.switchToSignup} style={{cursor:"pointer"}}><strong>SIGNUP</strong></div>
+                        <div onClick={this.switchToLogin} className={this.state.login === true ? "links1" : "links2"} style={{cursor:"pointer"}}><strong>LOGIN</strong></div>
+                        <div onClick={this.switchToSignup} className={this.state.login === false ? "links1" : "links2"} style={{cursor:"pointer"}}><strong>SIGNUP</strong></div>
                     </div>
                         <Route exact path="/Bookstore/Login">
                             <Login />
