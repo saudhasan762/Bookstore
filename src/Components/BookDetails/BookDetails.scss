@@ -1,0 +1,587 @@
+.mainContainer{
+    margin-top: 6%;
+    width: 70%; 
+    height: 100vh;
+    margin-left: 170px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    color : black;
+}
+.container{
+    width: 40%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5%;
+}
+.imgs-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height:90% ;
+}
+.twoimg-comtainer{
+    display: flex;
+    flex-direction: column;
+    width: 16%;
+    height: 35%;
+}
+.imgsmall1{
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;  
+    border-right:none;
+}
+.image2{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid grey;
+    border-right:none;
+    
+}
+.mediumimg{
+    width: 50px;
+    height: 55px;
+}
+.mainimg{
+    height: 100%;
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid grey;
+}
+.bigimg{
+    width: 74%;
+    height: 85%;
+}
+.wishlist{
+    width : 84%;
+    height : 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 14%;
+    /* align-items: center; */
+    margin-top: 3%;
+}
+.addtobag{
+    border : none;
+    outline: none;
+    color : #fff;
+    background-color: #A03037;
+    height : 40px;
+    width :100%;
+    border-radius: 1px;
+    cursor: pointer;
+}
+.wish{
+    border : none;
+    outline: none;
+    color : #fff;
+    background-color: black;
+    height : 40px;
+    width :100%;
+    border-radius: 1px;
+    cursor: pointer;
+}
+.addedtobag{
+    border : none;
+    outline: none;
+    color : #fff;
+
+    background-color: #1e53a1;
+    height : 40px;
+    width :100%;
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+.addOrRemove{
+    height : 80%;
+    width :100%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.addbtn{
+    width : 30%;
+    height : 100%;
+    border-radius: 100px;
+    outline: none;
+    border : none;
+    background-color: lightgray;
+    font-size: large;
+}
+.addwishlist{
+    border : none;
+    outline: none;
+    color : #fff;
+    background-color:  rgba(26, 1, 1, 0.733);
+    height : 40px;
+    width :170px;
+    border-radius: 1px;
+    margin-left: 13%;
+    cursor: pointer;
+}
+.details{
+    width: 60%;
+    height: 110%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bookdetail{
+    width : 80%;
+    height : 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 100px;
+}
+.cardcontainer{
+    width : 100%;
+    height : 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: sp; */
+}
+.titlebook{
+    width : 100%;
+    height : fit-content;
+    text-align: left;
+    letter-spacing: 0px;
+    font: normal normal normal 28px/37px Roboto;
+    color: #0A0102;
+    position: relative;
+    /* right : 7px;  */
+    opacity: 1;
+}
+.author{
+    width : 100%;
+    height : fit-content;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Roboto', sans-serif;
+    color :  grey;
+    font-weight: 400;
+}
+.card-rating{
+    width : 50%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+.star{
+    display: flex;
+    flex-direction: row;
+    background-color: green;
+    font-family: 'Roboto', sans-serif;
+    color :  #fff;
+    width : 20%;
+    align-items: center;
+    justify-content: center;
+    
+    border-radius: 2px;
+}
+.number{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+.rating-star{
+    margin-left: 8%;
+}
+.authorname{
+    margin-left: 2%;
+}
+
+.card-price{
+    display: flex;
+    flex-direction: row;
+    width : 25%;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 15px;
+}
+
+.discount-price {
+    font-family: 'Roboto', sans-serif;
+    color : black;
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.price{
+    font-family: 'Roboto', sans-serif;
+    color : grey;
+}
+
+.horizoantalline{
+    width : 100%;
+    height : fit-content;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.desc-book{
+    width : 90%;
+    height : 20%;
+    margin-right: 3%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+}
+
+.desc-title {
+    display: flex;
+    flex-direction: row;
+    width :17%;
+    height : 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 30px;
+}
+.dot {
+    width : 7px;
+    height : 7px;
+    border-radius: 100px;
+    background-color: grey;
+}
+.lorem{
+   margin-top: 7px;
+   margin-left: 12px;
+    width: 542px;
+    height: 75px;
+    /* text-align: left; */
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #373434;
+    opacity: 1;
+}
+.horizoantalline{
+    width : 100%;
+    height : fit-content;
+    margin-top: 3px;
+}
+/* .horizoantalline{
+    width : 100%;
+    height : fit-content;
+    margin-top: 3px;
+} */
+.customer-feedback {
+    width : 100%;
+    height : 30%;
+    display: flex;
+    flex-direction: column;
+    font-size:medium;
+    text-align: left;
+    margin-top: 10px;
+    font: normal normal normal 18px/24px Roboto;
+    letter-spacing: 0px;
+    /* justify-content: space-around; */
+}
+.feedback{
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
+    color: black;
+    font-weight: 700;
+    margin-top: 10px;
+  /* margin-top: 10px; */
+}
+
+.reviews{
+    width : 90%;
+    height : 30%;
+    margin-top: 1%;
+    margin-right: 2.5%;
+}
+
+.customer-feedback-container {
+    width : 100%;
+    height : 120%;
+    display: flex;
+    /* padding: 2%; */
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #F5F5F5;    
+    margin-top: 20px;    
+    /* border-top-width : 10%;  */
+
+}
+
+.overall-rating {
+    font-size: medium;
+    font-family: 'Roboto', sans-serif;
+}
+
+.rating-stars-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.textarea-actual-cutomerfeedback {
+    border : none;
+    outline: none;
+    width: 100%;
+}
+
+.submit-button-container-feedback {
+    width: 76px;
+    height: 24px;
+    background: #3371B5 0% 0% no-repeat padding-box;
+    border-radius: 2px;
+    opacity: 1;
+    margin-left: 400px;
+}
+
+.button {
+    border : none;
+    outline: none;
+    width: 44px;
+    height: 19px;
+    font: normal normal normal 14px/19px Roboto;
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    opacity: 1;
+    background: #3371B5 0% 0% no-repeat padding-box;
+    color: #FFFFFF;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+}
+
+@media only screen and (min-width: 400px)and  (max-width: 500px){
+.mainContainer{
+    width:60%;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* margin-left: -50%; */
+}
+    .container{
+        width:100%;
+        margin-left: -55%; 
+        /* display:flex; */
+
+        /* flex-direction: column;
+        align-items: center; */
+    }
+    .addtobag{
+        width: 43%;
+    }
+    .addOrRemove{
+
+        width: 43%;
+    }
+    .bookdetail{
+        margin-left: -80%; 
+        margin-top: 10%;
+        display:flex;
+        justify-content: flex-start;
+       
+    }
+    .star{
+        width:50px;
+    }
+    .number{
+        /* width: 1px; */
+        font-size: 15px;
+    }
+    .discount-price{
+        margin-left: 98%; 
+        font-size: 18px;
+    }
+    .price{
+        margin-top: 0%; 
+        margin-left: 10%;
+        font-size: 13px;
+    }
+    .horizoantalline{
+        /* margin-top: 10%; */
+        padding: 10%;
+        margin-left: -90%; 
+        width: 350px;
+    }
+    .desc-book{
+        width:100%;
+        margin-right: 105%; 
+        /* margin-top: 1%; */
+    }
+    .desc-title{
+        width:50%;
+        margin-right: 110%; 
+        margin-top: -10%;
+    }
+
+    .lorem{
+       
+        width:fit-content;
+        /* height: fit-content; */
+        /* text-align: left; */
+        /* margin-left: -100%; */
+        margin-top: 6%; 
+        margin-bottom: 65%; 
+    }
+
+    .imgsmall1{
+        display: none;
+    }
+
+    .image2{
+        display: none;
+    }
+
+    .title{
+        font: normal normal normal 25px/37px Roboto;
+    }
+
+    .details{
+        display:flex;
+        flex-direction: column;  
+        width:100%;
+    }
+
+    .customer-feedback-container{
+        width: 50%;
+    }
+
+    .textarea-actual-cutomerfeedback{
+        width:90%;
+        margin-left: 5%;
+    }
+    .wishlist{
+        width: 400px;
+        height: 60px;
+        margin-left: 20%;
+    }
+}
+
+
+@media only screen and (max-width: 360px){
+    .mainContainer{
+        /* width:50%; */
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        /* margin-left: -50%; */
+    }
+    .addtobag{
+        width: 43%;
+    }
+    .addOrRemove{
+
+        width: 43%;
+    }
+        .container{
+            width:100%;
+            margin-left: -55%; 
+            /* display:flex; */
+    
+            /* flex-direction: column;
+            align-items: center; */
+        }
+        .bookdetail{
+            margin-left: -80%; 
+            margin-top: 10%;
+            display:flex;
+            justify-content: flex-start;
+           
+        }
+        .star{
+            width:50px;
+        }
+        .number{
+            /* width: 1px; */
+            font-size: 15px;
+        }
+        .discount-price{
+            margin-left: 98%; 
+            font-size: 18px;
+        }
+        .price{
+            margin-top: 0%; 
+            margin-left: 10%;
+            font-size: 13px;
+        }
+        .horizoantalline{
+            /* margin-top: 10%; */
+            padding: 10%;
+            margin-left: -90%; 
+            width: 350px;
+        }
+        .desc-book{
+            width:100%;
+            margin-right: 105%; 
+            /* margin-top: 1%; */
+        }
+        .desc-title{
+            width:50%;
+            margin-right: 110%; 
+            margin-top: -10%;
+        }
+    
+        .lorem{
+           
+            width:fit-content;
+            /* height: fit-content; */
+            /* text-align: left; */
+            /* margin-left: -100%; */
+            margin-top: 6%; 
+            margin-bottom: 65%; 
+        }
+    
+        .imgsmall1{
+            display: none;
+        }
+    
+        .image2{
+            display: none;
+        }
+    
+        .title{
+            font: normal normal normal 25px/37px Roboto;
+        }
+    
+        .details{
+            display:flex;
+            flex-direction: column;  
+            width:100%;
+        }
+    
+        .customer-feedback-container{
+            width: 50%;
+        }
+    
+        .textarea-actual-cutomerfeedback{
+            width:90%;
+            margin-left: 5%;
+        }
+        .wishlist{
+            width: 400px;
+            height: 60px;
+            margin-left: 20%;
+        }
+    }
