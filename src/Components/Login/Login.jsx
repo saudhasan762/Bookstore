@@ -84,8 +84,9 @@ class Login extends Component {
             // console.log(data);
             service.login(data).then((res) => {
                 console.log(res);
+                localStorage.setItem('Token', res.data.result.accessToken);
                 this.setState({ snackType: "success", snackMessage: "Login successful", open: true, setOpen: true });
-                this.props.history.push("/Dashboard");
+                this.props.history.push("/Dashboard/DisplayBooks");
             })
                 .catch((err) => {
                     console.log(err);
