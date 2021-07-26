@@ -81,7 +81,8 @@
 
 @media only screen and (max-width: 360px) {
     .appbar {
-        width: 225%;
+        // width: 225%;
+        width: auto;
    }
     .appbar div {
         display: flex;
@@ -138,4 +139,14 @@
         color: white;
          /* margin-left: 50px; */
    }
+}
+
+@media screen and (max-width: 531px) and (max-width: 768px){
+  
+    .appbar .input{
+        width: auto;
+    }
+    .input input {
+        width: auto;
+    }
 }
