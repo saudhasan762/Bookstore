@@ -2,18 +2,71 @@ import { Component } from "react";
 import book from "../../Assets/bookbig.png"
 import "./BookDetails.scss"
 import {connect} from 'react-redux'
+import BookServices from "../../Services/BookServices";
+import { withRouter } from "react-router-dom";
+import { cartCount } from "../../Redux/Actions/ActionType";
+const service  = new BookServices();
 
 
 const mapStateToProps = (state) => {
-    console.log(state.bookDetails.content);
+    console.log(state.bookDetails.detail);
     return{
-        selectedBook: state.bookDetails.content
+        selectedBook: state.bookDetails.detail
     }
 }
 
 class BookDetails extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            cartBooks: [],
+            storedetails: {}
+        }
+    }
+
+    componentDidMount(){
+        this.getcart();
+        // this.store();
+    }
+
+    store = () => {
+        this.setState({storedetails: this.props.selectedBook})
+        console.log(this.state.storedetails);
+    }
+
+    addtoCart = (value) => {
+        let data = {
+            isCart: true
+        }
+        let token = localStorage.getItem('Token');
+        // console.log(data, value._id, token);
+        service.addToCart(data, value._id, token).then((res)=>{
+            console.log(res);
+            this.props.history.push("/Dashboard/BookDetails");
+            this.getcart();
+        })
+        .catch((err)=>{
+            console.log(err);
+        })  
+    }
+
+    getcart = () => {
+        service.getCartItems().then((res) => {
+            this.setState({cartBooks: res.data.result})
+            this.props.cartCount(res.data.result.length);
+        })
+    }
+
+    bookInbag = (id) => {
+        let result = this.state.cartBooks.find(function(value) {
+            if(value.product_id._id === id){
+                return true;
+            }
+            else{
+                return false;
+            }
+        })
+        return result;
     }
 
     render() {
@@ -36,23 +89,16 @@ class BookDetails extends Component {
                         </div>
                         <div className="wishlist">
 
-                            {/* {this.bookInBag(this.props.selectedBook._id) ? */}
-                                {/* <div className="addOrRemove">
+                            {this.bookInbag(this.props.selectedBook._id) ?
+                                <div className="addOrRemove">
                                     <button className="addedtobag">ADDED TO BAG</button>
-                                </div> */}
-                                {/* : */}
-                               
-                                <button className="addtobag" onClick={() => this.addedtoCart(this.props.selectedBook)}
-                                >ADD TO BAG
-                                </button>
-                               
-                                
-                                <button className="wish">WISHLIST</button>
-                                
-                                
-                                
-
-                            {/* } */}
+                                </div>
+                                : <>
+                               <div style={{width: "65%",paddingLeft: "5%"}}>
+                                    <button  className="addtobag" onClick={() => this.addtoCart(this.props.selectedBook)}>ADD TO BAG</button>
+                               </div>
+                               <div style={{width: "65%",paddingLeft: "5%"}}><button className="wish">WISHLIST</button></div> </>
+                            } 
                         </div>
                     </div>
 
@@ -127,4 +173,4 @@ class BookDetails extends Component {
 
 }
 
-export default connect(mapStateToProps)(BookDetails);
+export default withRouter (connect(mapStateToProps,{cartCount})(BookDetails));
