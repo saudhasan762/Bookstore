@@ -12,7 +12,7 @@ const Routing = () => {
                     <Redirect to="/Bookstore/Login"></Redirect>
                 </Route>
                 <Route path='/Bookstore' component={LoginMain}></Route>
-                <Route exact path='/Dashboard' component={Dashboard}></Route>
+                <Route path='/Dashboard' component={Dashboard}></Route>
             </Switch>
         </div>
         </BrowserRouter>
