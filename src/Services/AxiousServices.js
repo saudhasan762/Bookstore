@@ -9,4 +9,13 @@ export default class AxiosService{
     postMethod = (url, data, isHeaderRequired = false) => {
         return axios.post(url,data, isHeaderRequired)
     }
+    
+    deleteMethod =(url,isHeaderRequired = false)=>{
+        return axios.delete(url,isHeaderRequired)
+
+    }
+    
+    putMethod =(url,data,isHeaderRequired = false)=>{
+        return axios.put(url,data,isHeaderRequired)
+    }
 }
