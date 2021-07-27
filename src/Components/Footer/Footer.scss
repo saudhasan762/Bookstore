@@ -21,8 +21,17 @@
 }
 
 
-@media only screen and (min-width: 400px) and (max-width:500px){
+@media only screen and (min-width: 360px) and (max-width:500px){
     .footer{
-        width: auto;
+        width: 540px;
+    }
+    .footer p{
+        margin-left: 5%;
+    }
+}
+
+@media only screen and (max-width:760px){
+    .footer{
+        width: 450px;
     }
 }
