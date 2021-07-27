@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import MarkunreadMailboxOutlinedIcon from '@material-ui/icons/MarkunreadMailboxOutlined';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import './Profile.scss'
+import { Link } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -20,6 +21,10 @@ const logout = () => {
   window.location.replace("/Bookstore/Login");
 }
 
+const wishlist = () => {
+    window.location.replace("/Dashboard/WishList");
+}
+
 export default function Profile() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -33,12 +38,16 @@ export default function Profile() {
 
   return (
     <>
-      <PermIdentityIcon className="proicon" aria-describedby={id} type="button" onClick={handleClick}/>
+      <PermIdentityIcon className="proicon" aria-describedby={id} type="button" onClick={handleClick} onClickA/>
       <Popper id={id} open={open} anchorEl={anchorEl}>
         <div className={classes.paper}>
           <div className="profile_main">
-            Welcome
+            <b>Hi Saud,</b>
             <p>To Access account & manage Orders</p>
+            <div style={{display: "flex", flexDirection: "row",padding:"10px",cursor: "pointer"}} onClick={wishlist}>
+                <FavoriteBorderOutlinedIcon  style={{fontSize:"22", color:"gray",paddingTop: "2px"}}></FavoriteBorderOutlinedIcon>
+                <p style={{paddingLeft: "10px"}}>Wishlist</p>
+            </div>
             <button className="profile_btn" onClick={logout}>LOGOUT</button>
           </div>
         </div>
