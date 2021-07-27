@@ -20,18 +20,25 @@ class BookDetails extends Component {
         super(props);
         this.state = {
             cartBooks: [],
-            storedetails: {}
+            storedetails: {},
+            wishBooks: []
         }
     }
 
     componentDidMount(){
         this.getcart();
-        // this.store();
+        this.getWishlist();
     }
 
     store = () => {
         this.setState({storedetails: this.props.selectedBook})
         console.log(this.state.storedetails);
+    }
+
+    getWishlist = () => {
+        service.getWishList().then((res)=> {
+            this.setState({wishBooks: res.data.result})
+        })
     }
 
     addtoCart = (value) => {
@@ -43,11 +50,28 @@ class BookDetails extends Component {
         service.addToCart(data, value._id, token).then((res)=>{
             console.log(res);
             this.props.history.push("/Dashboard/BookDetails");
+            this.removeFromWish(value._id);
             this.getcart();
         })
         .catch((err)=>{
             console.log(err);
         })  
+    }
+
+    removeFromWish = (id) => {
+        service.removeFromWishList(id).then((res)=>{
+            console.log(res);
+        })
+    }
+
+    addtoWishlist = (value) => {
+        service.addToWishList(value._id).then((res)=> {
+            console.log(res);
+            this.props.history.push("/Dashboard/BookDetails");
+        })
+        .catch((err)=> {
+            console.log(err);
+        })
     }
 
     getcart = () => {
@@ -59,6 +83,18 @@ class BookDetails extends Component {
 
     bookInbag = (id) => {
         let result = this.state.cartBooks.find(function(value) {
+            if(value.product_id._id === id){
+                return true;
+            }
+            else{
+                return false;
+            }
+        })
+        return result;
+    }
+
+    bookInWish= (id) => {
+        let result = this.state.wishBooks.find(function(value) {
             if(value.product_id._id === id){
                 return true;
             }
@@ -97,7 +133,9 @@ class BookDetails extends Component {
                                <div style={{width: "65%",paddingLeft: "5%"}}>
                                     <button  className="addtobag" onClick={() => this.addtoCart(this.props.selectedBook)}>ADD TO BAG</button>
                                </div>
-                               <div style={{width: "65%",paddingLeft: "5%"}}><button className="wish">WISHLIST</button></div> </>
+                               {this.bookInWish(this.props.selectedBook._id) ? 
+                               <div style={{width: "65%",paddingLeft: "5%"}}><button className="wish">ADDED TO WISHLIST</button></div> : 
+                               <div style={{width: "65%",paddingLeft: "5%"}}><button className="wish" onClick={() => this.addtoWishlist(this.props.selectedBook)}>WISHLIST</button></div>} </>
                             } 
                         </div>
                     </div>
