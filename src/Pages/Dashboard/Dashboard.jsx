@@ -4,6 +4,7 @@ import Footer from "../../Components/Footer/Footer";
 import DisplayBooks from "../../Components/DisplayBooks/DisplayBooks";
 import BookDetails from "../../Components/BookDetails/BookDetails";
 import OrderSucess from "../../Components/OrderSuccess/OrderSuccess";
+import WishList from "../../Components/WishList/WishList";
 import Cart from "../../Components/Cart/Cart"
 import { Route } from "react-router-dom";
 import BookServices from "../../Services/BookServices";
@@ -68,6 +69,7 @@ class Dashboard extends React.Component{
                 </Route>
                 <Route exact path="/Dashboard/Cart"><Cart /></Route>
                 <Route exact path="/Dashboard/OrderSuccess"><OrderSucess /></Route>
+                <Route exact path="/Dashboard/Wishlist"><WishList /></Route>
                 <Footer />
             </div>
         )
