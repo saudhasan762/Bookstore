@@ -50,7 +50,7 @@ class Header extends Component {
         return (
             <>
                 <div className="appbar">
-                    <div>
+                    <div className="head">
                         <Link to="/Dashboard/DisplayBooks"><img src={book} alt=""></img></Link>
                         <p className="book"><Link to="/Dashboard/DisplayBooks" style={{ listStyleType: "none", color: 'white', textDecoration: 'none' }}>Bookstore</Link></p>
                         <div className="input">
@@ -58,7 +58,7 @@ class Header extends Component {
                             <input type="text" placeholder="Search" onChange={(e) => this.handleChange(e, e.target.value)} />
                         </div>
                     </div>
-                    <div>
+                    <div className="icons">
                         <div className="pro">
                             {/* <PermIdentityIcon className="proicon"/>Profile */}
                             <Profile />Profile

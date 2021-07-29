@@ -16,22 +16,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const logout = () => {
-  localStorage.removeItem('Token');
-  window.location.replace("/Bookstore/Login");
-}
-
 const wishlist = () => {
     window.location.replace("/Dashboard/WishList");
 }
 
-export default function Profile() {
+export default function Profile(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
     setAnchorEl(anchorEl ? null : event.currentTarget);
   };
+
+  const logout = () => {
+    localStorage.removeItem('Token');
+    props.history.push("/Bookstore/Login");
+  }
 
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popper' : undefined;
